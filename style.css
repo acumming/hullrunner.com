@@ -1,0 +1,132 @@
+:root {
+  --bg-color: black;
+  --text-color: white;
+  --cursor-color: #ffb319;
+  /* --font-size: 24px; */
+  --line-height: 1rem;
+  --cursor-width: 0.5rem;
+  --gradient-color-start: hsla(0, 0%, 28%, 0.75);
+  --gradient-color-end: black;
+
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--cursor-color);
+  position: relative;
+  background-image: radial-gradient(var(--gradient-color-start), var(--gradient-color-end) 120%);
+  height: 100vh;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px);
+}
+
+.text {
+  position: relative;
+  font-size: var(--line-height);
+  line-height: var(--line-height);
+  text-shadow: 0 0 5px var(--cursor-color);
+
+}
+
+.text-inline {
+  display: inline-block;
+  position: relative;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  display: inline-block;
+  background-color: var(--cursor-color);
+  vertical-align: top;
+  width: var(--cursor-width);
+  height: var(--line-height);
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+.static-logo {
+  position: absolute;
+  bottom: 32px;
+  right: 24px;
+  width: 64px;
+  opacity: 0.25;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+.ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
